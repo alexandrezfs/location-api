@@ -25,3 +25,10 @@ func (c App) Hello(myName string) revel.Result {
 	return c.Render(myName)
 	
 }
+
+func (c App) TestJson() revel.Result {
+
+	//TODO
+
+	return c.Render(App.Index)
+}
