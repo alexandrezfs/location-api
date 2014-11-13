@@ -9,6 +9,12 @@ type App struct {
 	*revel.Controller
 }
 
+type Example struct {
+    text  []string
+ }
+
+
+
 func (c App) Index() revel.Result {
 
 	db, err := sql.Open("mysql", "root:kazuki69@/golang")
@@ -56,9 +62,15 @@ func (c App) Index() revel.Result {
     }
     fmt.Printf("The square number of 1 is: %d", squareNum)
 
-
-
 	greeting := "test json"
+
+
+    var arr = []Example {
+        {{"a", "b", "c"}},
+    }
+    fmt.Println(arr)    
+
+
 	return c.Render(greeting)
 }
 
