@@ -16,8 +16,6 @@ type Example struct {
     text  []string
  }
 
-
-
 func (c App) Index() revel.Result {
 
 	db, err := sql.Open("mysql", "root:kazuki69@/golang")
@@ -136,6 +134,20 @@ func (c App) Hello(myName string) revel.Result {
 }
 
 func (c App) TestJson() revel.Result {
+
+
+    type jsonobject struct {
+        Object ObjectType
+    }
+
+    type ObjectType struct {
+        Names   []NamesType
+    }
+
+    type NamesType struct {
+        Firstname   string
+        Lastname   string
+    }
 
 	//TODO
 
